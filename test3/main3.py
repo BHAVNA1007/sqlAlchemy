@@ -90,6 +90,25 @@ from sqlalchemy import select
 
 
 
+from sqlalchemy import update
+
+stmt = (
+    update(Employee)
+    .where(Employee.id == 1)
+    .values(salary = 90000)
+)
+
+session.execute(stmt)
+session.commit()
+
+print("Salary updated successfully!")
+
+
+
+
+
+
+
 
 
 # stmt = select(Employee).where(Employee.id == 1)
